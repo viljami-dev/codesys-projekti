@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# CodeSys / temp / backup
+*.bak
+*.tmp
+*.log
+*.cache/
+*/backup/
+*/temp/
+*/tmp/
+
+# Archives (if you export additional packages)
+*.zip
+*.7z
+*.rar
