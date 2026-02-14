@@ -223,7 +223,6 @@ Global signals are grouped and commented for clarity (levels, thresholds, interl
 
 Use a cyclic task (e.g., `Task20ms`) to execute `PLC_PRG` and schedule FBs reliably.
 
-> If you have a Task Configuration screenshot, add it to `docs/` and reference it here (e.g., `docs/task_configuration.png`).
 
 ---
 
