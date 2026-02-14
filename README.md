@@ -45,26 +45,27 @@ README.md
 ## Quick Gallery
 
 **Device tree**  
-docs/device_tree.png
+![Device tree](docs/device_tree.png)
 
 **Global variables**  
-docs/Global_variables.png
+![Global variables](docs/Global_variables.png)
 
 **Main program (PLC_PRG) – overview**  
-docs/PLC_PRG1.png
+![PLC_PRG overview](docs/PLC_PRG1.png)
 
 **Main program (PLC_PRG) – FB instances**  
-docs/PLC_PRG2.png
+![PLC_PRG FB instances](docs/PLC_PRG2.png)
 
 ---
 
 ## Logic Overview
 
 ### 🔵 Automatic Mode (LD)
+
 Automatic mode is latched with an RS flip‑flop and released by reset or safety conditions.  
 Output signal `Automaattitila_paalle` is the global enable for all automatic sub‑blocks.
 
-docs/LD_Automaattitila.png
+![LD_Automaattitila](docs/LD_Automaattitila.png)
 
 **Key idea**
 - **SET (start)** from operator inputs (e.g., S1/S2/S3)  
@@ -74,11 +75,12 @@ docs/LD_Automaattitila.png
 ---
 
 ### 🧰 Manual Mode (LD)
+
 Manual ladder logic gates each actuator output with `Manuaalitila_paalle` and **ESTOP** so that manual jog/testing is safe and controlled.
 
-docs/LD_Manuaali_logiikka.png
+![LD_Manuaali_logiikka](docs/LD_Manuaali_logiikka.png)
 
-Highlights:
+**Highlights**
 - Each actuator rung = `Manuaalitila_paalle AND NOT ESTOP`  
 - Clear separation from automatic outputs  
 - Immediate cut‑off on ESTOP
@@ -89,7 +91,7 @@ Highlights:
 In automatic mode, the main actuators are enabled only when `Automaattitila_paalle = TRUE`.  
 Simple AND gating prevents unintended actuation.
 
-docs/FBD_Auto_output_control.png
+![FBD_Auto_output_control](docs/FBD_Auto_output_control.png)
 
 Controls:
 - `Auto_filling_valve` → `_4M2`  
@@ -102,10 +104,10 @@ Controls:
 Combines sensor feedback, interlocks, and state conditions to allow or inhibit the conveyor valve.
 
 **Logic overview**  
-docs/FBD_Auto_conveyor_valve_1.png
+![Conveyor valve – logic](docs/FBD_Auto_conveyor_valve_1.png)
 
 **Internal variables & timing (TON/TOF, R_TRIG/F_TRIG)**  
-docs/FBD_Auto_conveyor_valve_2.png
+![Conveyor valve – vars & timing](docs/FBD_Auto_conveyor_valve_2.png)
 
 Key points:
 - Edge detection and comparators to form robust conditions  
@@ -117,7 +119,7 @@ Key points:
 ### 💧 Automatic Pump Control (FBD)
 Pump logic uses a ready‑delay (TON) and SR/RS latches to keep the pump stable and safe.
 
-docs/FBD_Auto_pump_on.png
+![FBD_Auto_pump_on](docs/FBD_Auto_pump_on.png)
 
 Highlights:
 - `Fill_ready` & auto mode start a delay  
@@ -129,7 +131,7 @@ Highlights:
 ### 🔧 Analog Motor Control (FBD)
 Scales and clamps analog output; supports manual/automatic selection and safety interlocks.
 
-docs/FBD_analog_motor_control.png
+![FBD_analog_motor_control](docs/FBD_analog_motor_control.png)
 
 Highlights:
 - `SEL` for manual/auto source selection  
