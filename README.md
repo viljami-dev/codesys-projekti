@@ -208,7 +208,7 @@ ELSE
 END_IF;
 
 END_FUNCTION_BLOCK
-
+'''
 ## Global Variables
 
 Global signals are grouped and commented for clarity (levels, thresholds, interlocks, mode bits, AO scaling, etc.).
